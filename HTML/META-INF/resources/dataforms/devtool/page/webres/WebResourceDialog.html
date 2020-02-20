@@ -5,6 +5,8 @@
 		<title>Webリソース作成</title>
 	</head>
 	<body>
+<!-- 【for Bulma】標準のHTMLをカスタマイズ. start -->
+<!--
 		<form id="webResourceForm">
 			<table class="responsive thtd">
 				<tbody>
@@ -74,6 +76,92 @@
 					</tr>
 				</tbody>
 			</table>
+ -->
+		<form id="webResourceForm" class="modal is-active"><!-- Bulmaの都合上ここにmodal,is-activeを指定しておく(モバイル端末での幅Fit不具合のため) -->
+			<div class="modal-background"></div>
+			<div class="modal-card">
+				<header class="modal-card-head">
+					<p class="modal-card-title">Modal title</p>
+				</header>
+				<section class="modal-card-body">
+					<div class="field">
+						<label class="label">Webリソース出力先</label>
+						<p class="control">
+							<input class="input is-static" type="text" placeholder="" id="webSourcePath" readonly>
+						</p>
+					</div>
+					<div class="field">
+						<label class="label">種類</label>
+						<p class="control">
+							<select id="webComponentType"></select>
+						</p>
+					</div>
+					<div class="field">
+						<label class="label">クラス名</label>
+						<p class="control">
+							<input class="input is-static" type="text" placeholder="" id="className" readonly>
+						</p>
+					</div>
+					<div class="field" id="htmlTr">
+						<div class="field">
+							<label class="label">HTML</label>
+						</div>
+						<div class="field is-grouped">
+							<p class="control is-expanded">
+								<input class="input is-static" type="text" placeholder="" id="htmlPath" readonly>
+							</p>
+							<p class="control">
+								<select id="htmlStatus"></select>
+							</p>
+							<p class="control">
+								<span class="buttons">
+									<input class="button is-primary" type="button" id="generateHtml" value="作成">
+								</span>
+							</p>
+						</div>
+						<div class="field is-grouped">
+							<p class="control">
+								<input class="is-checkradio" type="checkbox" id="outputFormHtml" value="1" />
+								<label for="outputFormHtml">フォームは別ファイルに出力</label>
+							</p>
+						</div>
+					</div>
+					<div class="field">
+						<div class="field">
+							<label class="label">Javascript</label>
+						</div>
+						<div class="field is-grouped">
+							<p class="control is-expanded">
+								<input class="input is-static" type="text" placeholder="" id="javascriptPath" readonly>
+							</p>
+							<p class="control">
+								<select id="javascriptStatus"></select>
+							</p>
+							<p class="control">
+								<span class="buttons">
+									<input class="button is-primary" type="button" id="generateJavascript" value="作成">
+								</span>
+							</p>
+						</div>
+					</div>
+					<div class="field">
+						<label class="label">Javascriptクラス</label>
+						<p class="control">
+							<input class="input is-static" type="text" placeholder="" id="javascriptClass" readonly>
+						</p>
+					</div>
+					<div class="field">
+						<p class="control">
+							<input class="is-checkradio" type="checkbox" id="forceOverwrite" value="1" />
+							<label for="forceOverwrite">ソースファイルを上書きする。</label>
+						</p>
+					</div>
+				</section>
+				<footer class="modal-card-foot">
+					<input type="button" id="closeButton" value="閉じる" class="button"/>
+				</footer>
+			</div>
+<!-- 【for Bulma】標準のHTMLをカスタマイズ. end -->
 		</form>
 	</body>
 </html>

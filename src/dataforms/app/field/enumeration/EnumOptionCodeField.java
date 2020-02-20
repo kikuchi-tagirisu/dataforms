@@ -11,7 +11,7 @@ public class EnumOptionCodeField extends VarcharField {
 	/**
 	 * フィールド長。
 	 */
-	public static final int LENGTH = 16;
+	public static final int LENGTH = 32;
 
 	/**
 	 * コメント。
@@ -34,7 +34,7 @@ public class EnumOptionCodeField extends VarcharField {
 		super(id, LENGTH);
 		this.setComment(COMMENT);
 	}
-	
+
 	@Override
 	protected void onBind() {
 		super.onBind();

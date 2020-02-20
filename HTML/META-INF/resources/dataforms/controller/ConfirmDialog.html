@@ -5,11 +5,27 @@
 	<title></title>
 	</head>
 	<body>
+<!-- 【for Bulma】標準のHTMLをカスタマイズ. start -->
+<!--
 		<span id="confirmMessage"></span><br/><br/>
 		<div class="buttonDiv">
 			<input type="button" id="confirmOkButton" value="OK"/>
 			<input type="button" id="confirmCancelButton" value="Cancel"/>
 		</div>
-		
+ -->
+		<div class="modal-background"></div>
+		<div class="modal-card">
+			<header class="modal-card-head">
+				<p class="modal-card-title">Modal title</p>
+			</header>
+			<section class="modal-card-body">
+				<span id="confirmMessage"></span><br/><br/>
+			</section>
+			<footer class="modal-card-foot">
+				<input type="button" id="confirmOkButton" value="Ok" class="button is-primary"/>
+				<input type="button" id="confirmCancelButton" value="Cancel" class="button"/>
+			</footer>
+		</div>
+<!-- 【for Bulma】標準のHTMLをカスタマイズ. end -->
 	</body>
 </html>

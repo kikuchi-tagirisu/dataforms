@@ -6,6 +6,8 @@
 	</head>
 	<body>
 		<form id="loginInfoForm">
+<!-- 【for Bulma】標準のHTMLをカスタマイズ. start -->
+<!--
 			<div id="dontLoginDiv">
 				ログインしていません。<br/>
 				<input type="button" id="regUserButton" value="ユーザ登録"/><br/>
@@ -14,6 +16,24 @@
 				<span id="userName"></span>がログインしています。
 				<input type="button" id="logoutButton" value="ログアウト"/>
 			</div>
+ -->
+			<div id="dontLoginDiv">
+				<div class="buttons">
+					<input type="button" id="regUserButton" value="Sign up" class="button is-primary"/><br/>
+					<a class="button is-info" id="loginButton">
+						Sign in
+					</a>
+				</div>
+			</div>
+			<div id="underLoginDiv" style="display: none;">
+				<div class="buttons">
+					<a class="button is-info" id="changePasswordButton">
+						<span id="userName"></span>
+					</a>
+					<input type="button" id="logoutButton" value="Sign out" class="button is-light"/>
+				</div>
+			</div>
+<!-- 【for Bulma】標準のHTMLをカスタマイズ. end -->
 		</form>
 	</body>
 </html>

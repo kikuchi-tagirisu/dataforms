@@ -21,7 +21,7 @@ import dataforms.servlet.DataFormsServlet;
  * ユーザの追加情報ユーティリティ。
  *
  */
-public class UserAdditionalInfoTableUtil {
+public final class UserAdditionalInfoTableUtil {
 
 	/**
 	 * Logger.

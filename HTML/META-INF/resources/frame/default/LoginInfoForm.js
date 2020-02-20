@@ -44,7 +44,10 @@ LoginInfoForm.prototype.attach = function() {
 	var form = this;
 	var thisPage = this.parent;
 	form.find('#loginButton').click(function () {
-		thisPage.showLoginDialog();
+// 【for Bulma】ログイン画面へ遷移 start
+//		thisPage.showLoginDialog();
+		window.location.href = thisPage.contextPath;
+// 【for Bulma】ログイン画面へ遷移 end
 	});
 	if (form.userRegistPage != null) {
 		form.find('#regUserButton').click(function() {
@@ -56,5 +59,10 @@ LoginInfoForm.prototype.attach = function() {
 	form.find('#logoutButton').click(function() {
 		form.logout();
 	});
+// 【for Bulma】パスワード変更画面へ遷移 start
+	form.find('#changePasswordButton').click(function() {
+		window.location.href = thisPage.contextPath + "/dataforms/app/page/user/ChangePasswordPage.df";
+	});
+// 【for Bulma】パスワード変更画面へ遷移 end
 	this.update();
 };

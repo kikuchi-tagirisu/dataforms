@@ -25,7 +25,15 @@ Dialog.prototype.init = function() {
 	var dlgdiv = $('body').find('#' + this.selectorEscape(this.id));
 	if (dlgdiv.length == 0) {
 		var htmlstr = this.additionalHtmlText;
-		dlgdiv = $('body').append("<div id='" + this.id + "' style='display:none;'>" + htmlstr + "</div>");
+// 【for Bulma】BulmaのModalを使用 start
+//		dlgdiv = $('body').append("<div id='" + this.id + "' style='display:none;'>" + htmlstr + "</div>");
+		dlgdiv = $('body').append("<div id='" + this.id + "' class='modal'>" + htmlstr + "</div>");
+// closeボタンや背景クリックで閉じる必要がある場合は、継承先クラスで実装する
+//		Exp.
+//			$("#close, div.modal-background").on("click", function() {
+//				dlgdiv.removeClass("is-active");
+//			})
+// 【for Bulma】BulmaのModalを使用 end
 	}
 	// ダイアログ中のFormの初期化.
 	this.initForm(this.formMap);
@@ -55,19 +63,29 @@ Dialog.prototype.attach = function() {
 Dialog.prototype.show = function(modal, p) {
 	this.toQueryMode();
 	var dlgdiv = $('body').find('#' + this.selectorEscape(this.id));
-	var m = {
-		modal: modal
-		,title: this.title
-		,height: this.width
-		,width: this.height
-		,resizable: this.resizable
-	};
-	if (p != null) {
-		for (var k in p) {
-			m[k] = p[k];
+// 【for Bulma】BulmaのModalを使用 start
+//	var m = {
+//		modal: modal
+//		,title: this.title
+//		,height: this.width
+//		,width: this.height
+//		,resizable: this.resizable
+//	};
+//	if (p != null) {
+//		for (var k in p) {
+//			m[k] = p[k];
+//		}
+//	}
+//	dlgdiv.dialog(m);
+	dlgdiv.find(".modal-card-title").text(this.title);
+	// Enterキー押下時の動作を無効化.
+	$('body').keypress((e)=>{
+		if(e.which == 13){
+			return false;
 		}
-	}
-	dlgdiv.dialog(m);
+	});
+	dlgdiv.addClass('is-active');
+// 【for Bulma】BulmaのModalを使用 end
 };
 
 
@@ -95,5 +113,10 @@ Dialog.prototype.showModeless = function(p) {
 Dialog.prototype.close = function() {
 	this.resetErrorStatus();
 	var dlgdiv = $('body').find('#' + this.selectorEscape(this.id));
-	dlgdiv.dialog('close');
+// 【for Bulma】BulmaのModalを使用 start
+//	dlgdiv.dialog('close');
+	// Enterキー無効化の削除.
+	$('body').off("keypress");
+	dlgdiv.removeClass('is-active');
+// 【for Bulma】BulmaのModalを使用 end
 };

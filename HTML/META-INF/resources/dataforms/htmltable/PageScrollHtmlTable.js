@@ -19,7 +19,10 @@ PageScrollHtmlTable.prototype.attach = function() {
 	this.sortOrder = "";
 	var thisTable = this;
 	HtmlTable.prototype.attach.call(this);
-	thisTable.get().before(this.additionalHtmlText);
+// 【for Bulma】スクロールするTableとして使う場合、ページャの位置が問題となるため修正 start
+//	thisTable.get().before(this.additionalHtmlText);
+	thisTable.get().parent().before(this.additionalHtmlText);
+// 【for Bulma】スクロールするTableとして使う場合、ページャの位置が問題となるため修正 end
 	thisTable.parent.find(":input").each(function() {
 		if ($(this).attr("name") == null) {
 			$(this).attr("name", $(this).attr("id"));

@@ -112,11 +112,11 @@ QueryResultForm.prototype.nextPage = function() {
 
 /**
  * PKフィールドのdisabled属性を設定します。
- * 
+ *
  * QueryResultFieldにPKフィールドを出力しないように修正したので、
  * 将来的にはこのメソッドは不要になります。
  * 古いHTMLでも動作するようにしばらく残しておきます。
- * 
+ *
  * @param {Boolean} disabled disbaled属性。
  */
 QueryResultForm.prototype.setDisabledPkField = function(disabled) {
@@ -246,32 +246,60 @@ QueryResultForm.prototype.setPagerInfo = function(queryResult) {
  * ページ関連情報を制御します。
  */
 QueryResultForm.prototype.controlPager = function() {
+// 【for Bulma】ボタン(Aタグ)の編集可否制御に変更 start
+//	if (this.find("#queryResult>tbody>tr").length == 0) {
+//		this.find("#linesPerPage").prop("disabled", true);
+//		this.find("#topPageButton").prop("disabled", true);
+//		this.find("#prevPageButton").prop("disabled", true);
+//		this.find("#pageNo").prop("disabled", true);
+//		this.find("#nextPageButton").prop("disabled", true);
+//		this.find("#bottomPageButton").prop("disabled", true);
+//	} else {
+//		this.find("#linesPerPage").prop("disabled", false);
+//		this.find("#topPageButton").prop("disabled", false);
+//		this.find("#prevPageButton").prop("disabled", false);
+//		this.find("#pageNo").prop("disabled", false);
+//		this.find("#nextPageButton").prop("disabled", false);
+//		this.find("#bottomPageButton").prop("disabled", false);
+//		var minPage = 0;
+//		var maxPage = parseInt(this.find("#pageNo>option:last").val(), 10);
+//		var pageNo = parseInt(this.find("#pageNo").val(), 10);
+//		if (pageNo == minPage) {
+//			this.find("#topPageButton").prop("disabled", true);
+//			this.find("#prevPageButton").prop("disabled", true);
+//		}
+//		if (pageNo == maxPage) {
+//			this.find("#nextPageButton").prop("disabled", true);
+//			this.find("#bottomPageButton").prop("disabled", true);
+//		}
+//	}
 	if (this.find("#queryResult>tbody>tr").length == 0) {
 		this.find("#linesPerPage").prop("disabled", true);
-		this.find("#topPageButton").prop("disabled", true);
-		this.find("#prevPageButton").prop("disabled", true);
+		this.find("#topPageButton").addClass("is-static");
+		this.find("#prevPageButton").addClass("is-static");
 		this.find("#pageNo").prop("disabled", true);
-		this.find("#nextPageButton").prop("disabled", true);
-		this.find("#bottomPageButton").prop("disabled", true);
+		this.find("#nextPageButton").addClass("is-static");
+		this.find("#bottomPageButton").addClass("is-static");
 	} else {
 		this.find("#linesPerPage").prop("disabled", false);
-		this.find("#topPageButton").prop("disabled", false);
-		this.find("#prevPageButton").prop("disabled", false);
+		this.find("#topPageButton").removeClass("is-static");
+		this.find("#prevPageButton").removeClass("is-static");
 		this.find("#pageNo").prop("disabled", false);
-		this.find("#nextPageButton").prop("disabled", false);
-		this.find("#bottomPageButton").prop("disabled", false);
+		this.find("#nextPageButton").removeClass("is-static");
+		this.find("#bottomPageButton").removeClass("is-static");
 		var minPage = 0;
 		var maxPage = parseInt(this.find("#pageNo>option:last").val(), 10);
 		var pageNo = parseInt(this.find("#pageNo").val(), 10);
 		if (pageNo == minPage) {
-			this.find("#topPageButton").prop("disabled", true);
-			this.find("#prevPageButton").prop("disabled", true);
+			this.find("#topPageButton").addClass("is-static");
+			this.find("#prevPageButton").addClass("is-static");
 		}
 		if (pageNo == maxPage) {
-			this.find("#nextPageButton").prop("disabled", true);
-			this.find("#bottomPageButton").prop("disabled", true);
+			this.find("#nextPageButton").addClass("is-static");
+			this.find("#bottomPageButton").addClass("is-static");
 		}
 	}
+// 【for Bulma】ボタン(Aタグ)の編集可否制御に変更 end
 }
 
 /**

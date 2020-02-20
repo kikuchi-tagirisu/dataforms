@@ -313,6 +313,9 @@ Page.prototype.init = function() {
 	logger.info("language=" + this.getLanguage());
 	$.datepicker.setDefaults($.datepicker.regional[this.getLanguage()]);
 	var thisPage = this;
+// 【for Bug】DOM操作前に非表示にしておく	start
+	$("html").css("visibility", "hidden");
+// 【for Bug】DOM操作前に非表示にしておく	end
 	// ページの初期化.
 	var method = new AsyncServerMethod("getPageInfo");
 	method.execute("", function(result) {
@@ -346,6 +349,9 @@ Page.prototype.init = function() {
 		}
 		//
 		thisPage.attach();
+// 【for Bug】DOM操作後に表示する	start
+		$("html").css("visibility", "visible");
+// 【for Bug】DOM操作後に表示する	end
 	});
 };
 
@@ -376,6 +382,16 @@ Page.prototype.attach = function() {
 	$(window).resize(function() {
 		thisPage.onResize();
 	});
+
+// 【for Bulma】navbarにメニューを追加 start
+	// navbarのバーガーアイコンとメニューの編集可否制御
+	$(".navbar-burger").click(function() {
+		$(".navbar-burger").toggleClass("is-active");
+		$(".navbar-menu").toggleClass("is-active");
+
+	});
+	$("html").addClass("has-navbar-fixed-top");	// navbarにis-fixed-topを指定するのと並行して設定が必要
+// 【for Bulma】navbarにメニューを追加 end
 };
 
 

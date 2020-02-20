@@ -8,18 +8,18 @@
 <project basedir="." default="build" name="dataforms">
 	<!-- javadoc, jsdocとdataforms.jarを作成します。-->
 	<property environment="env"/>
-	<property name="PLEIADES_HOME" value="C:/eclipse/pleiades-2019-06"/>
-	<property name="ECLIPSE_HOME" value="../../eclipse/"/>
+	<property name="PLEIADES_HOME" value="C:\project\dreambook\pleiades-2019-09-java-win-64bit-jre_20191007\pleiades"/>
 	<property name="TOMCAT_HOME" value="${PLEIADES_HOME}/tomcat/9"/>
+	<property name="ECLIPSE_HOME" value="C:\project\pleiades\eclipse"/>
 	<property name="debuglevel" value="source,lines,vars"/>
 	<property name="target" value="1.8"/>
 	<property name="source" value="1.8"/>
 	<property name="jar.name" value="dataforms.jar"/>
 	<!--property name="jar.command" value="D:\eclipse\pleiades-e4.7.1\java\8\bin\jar.exe"/-->
 	<property name="jar.command" value="${PLEIADES_HOME}/java/8/bin/jar.exe" />
-	<property name="jsdoc.command" value="C:\Users\takay\AppData\Roaming\npm\jsdoc.cmd"/>
+	<property name="jsdoc.command" value="C:\project\nodejs\sample\node_modules\.bin\jsdoc.cmd"/>
 	<property name="version.num" value="1.32"/>
-	<property name="user" value="Masahiko Takayanagi"/>
+	<property name="user" value="Kikuchi Ryota"/>
 	<property name="javadoc.dir" value="./HTML/META-INF/resources/doc/javadoc"/>
 	<property name="jsdoc.dir" value="./HTML/META-INF/resources/doc/jsdoc"/>
 
@@ -143,7 +143,7 @@
 			<attribute name="Built-By" value="${user}"/>
 			<attribute name="Created-By" value="${user}"/>
 			<attribute name="Implementation-Vendor" value="${user}"/>
-			<attribute name="Implementation-Title" value="Dataforms java web application framework"/>
+			<attribute name="Implementation-Title" value="Dataforms java web application framework. Applied Bulma CSS framework"/>
 			<attribute name="Implementation-Version" value="${version.num}-b${build.number}"/>
 			<attribute name="CreatedTime" value="${build.time}" />
 		</manifest>

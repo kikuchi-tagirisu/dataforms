@@ -7,6 +7,8 @@
 	<body>
 		<div id="mainDiv">
 			<form id="siteMapForm">
+<!-- 【for Bulma】標準のHTMLをカスタマイズ. start -->
+<!--
 				<div id="menu" style="width:100%;">
 					<table id="menu[0]" style="width:100%;">
 						<thead>
@@ -28,6 +30,25 @@
 						</tbody>
 					</table>
 				</div>
+ -->
+				<div id="menu">
+					<div class="column" id="menu[0]" style="margin-bottom: 20px;">
+		 				<p id="menu[0].name" class="subtitle"></p>
+						<div id="menu[0].pageList">
+		 					<div class="columns">
+			 					<div class="column is-one-quarter" style="margin-left: 20px;">
+					 				<a id="menu[0].pageList[0].url">
+						 				<span id="menu[0].pageList[0].name"></span>
+					 				</a>
+			 					</div>
+			 					<div class="column" style="margin-left: 40px;">
+					 				<span id="menu[0].pageList[0].description"></span>
+			 					</div>
+		 					</div>
+						</div>
+	 				</div>
+				</div>
+<!-- 【for Bulma】標準のHTMLをカスタマイズ. end -->
 			</form>
 		</div>
 	</body>

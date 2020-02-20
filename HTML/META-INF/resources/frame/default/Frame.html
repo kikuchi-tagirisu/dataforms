@@ -13,6 +13,8 @@
 	</head>
 	<body>
 		<!-- ヘッダ -->
+<!-- 【for Bulma】標準のHTMLをカスタマイズ. start -->
+<!--
 		<div id="headerDiv">
 			<table>
 				<tbody>
@@ -34,6 +36,7 @@
 				<tr>
 					<td id="leftbarTd">
 						<!-- 右サイドバー -->
+<!--
 						<div id="menuDiv">
 							<div style="width:100%;text-align:center;">Menu</div>
 							<form id="sideMenuForm"></form>
@@ -41,6 +44,7 @@
 					</td>
 					<td id="mainTd">
 						<!-- メイン領域 -->
+<!--
 						<div id="mainDiv">
 							Main Div
 						</div>
@@ -53,6 +57,67 @@
 				dataforms.jar ver. <span id="dataformsVersion"></span>
 			</div>
 		</div>
+ -->
+		<!-- ヘッダ -->
+		<nav class="navbar is-fixed-top is-transparent" role="navigation" aria-label="main navigation">
+			<div class="container">
+				<div class="navbar-brand">
+					<a class="navbar-item" href="/">
+						<span>Site Logo Image.</span>
+					</a>
+					<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+					</a>
+				</div>
+				<div id="navbarBasicExample" class="navbar-menu">
+					<div class="navbar-start">
+					</div>
+
+					<div class="navbar-end">
+						<form id="sideMenuForm"></form>
+						<div class="navbar-item">
+							<form id="loginInfoForm"></form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<!-- ヒーロー領域 -->
+		<section class="hero is-light">
+			<div class="hero-body">
+				<div class="container">
+					<div class="columns">
+						<div class="column">
+							<h1 id="pageName" class="title"></h1>
+						</div>
+						<div class="column">
+							<h1>Hero Area.</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- メイン領域 -->
+		<section class="section" style="padding-top: 0px; flex: 1;">
+			<div class="container">
+				<div id="mainDiv">
+					<h1>Main Area.</h1>
+				</div>
+			</div>
+		</section>
+		<!-- フッター領域 -->
+		<footer class="footer">
+			<div class="content has-text-centered">
+				<div id="footerDiv">
+					<div id="dataformsInfo">
+						dataforms.jar ver. <span id="dataformsVersion"></span>
+					</div>
+				</div>
+			</div>
+		</footer>
+<!-- 【for Bulma】標準のHTMLをカスタマイズ. end -->
 		<div id="lockLayer" style="display:none;">
 		</div>
 	</body>

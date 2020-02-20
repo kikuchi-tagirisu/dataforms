@@ -5,6 +5,8 @@
 		<title>Login</title>
 	</head>
 	<body>
+<!-- 【for Bulma】標準のHTMLをカスタマイズ. start -->
+<!--
 		<form id="loginForm" style="height: 120px; ">
 			<table class="responsive thtd">
 				<tr>
@@ -31,5 +33,35 @@
 				</tr>
 			</table>
 		</form>
+ -->
+		<form id="loginForm">
+			<div class="column is-half is-offset-one-quarter">
+				<div class="field">
+					<label class="label is-hidden">UserID</label>
+					<p class="control has-icons-left">
+						<input id="loginId" class="input" type="text" placeholder="UserID">
+						<span class="icon is-small is-left">
+							<i class="fas fa-user"></i>
+						</span>
+					</p>
+				</div>
+				<div class="field">
+					<label class="label is-hidden">Password</label>
+					<p class="control has-icons-left">
+						<input id="password" class="input" type="password" placeholder="Password">
+						<span class="icon is-small is-left">
+							<i class="fas fa-lock"></i>
+						</span>
+					</p>
+				</div>
+				<div class="field">
+					<div class="buttons is-centered">
+						<input type="submit" id="loginButton" value="Sign in" class="button is-info"/>
+						<input type="button" id="resetButton" value="Reset" class="button is-light"/>
+					</div>
+				</div>
+			</div>
+		</form>
+<!-- 【for Bulma】標準のHTMLをカスタマイズ. end -->
 	</body>
 </html>

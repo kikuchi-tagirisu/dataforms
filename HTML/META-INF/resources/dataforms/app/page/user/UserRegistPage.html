@@ -8,6 +8,8 @@
 		<div id="mainDiv">
 			<form id="editForm">
 				<input type="hidden" id="saveMode" />
+<!-- 【for Bulma】標準のHTMLをカスタマイズ. start -->
+<!--
 				<table class="responsive">
 					<tbody>
 						<tr>
@@ -40,6 +42,72 @@
 				<input type="button" id="saveButton" value="Save"/>
 				<input type="button" id="resetButton" value="Reset"/>
 				<input type="button" id="backButton" value="Back"/>
+ -->
+				<div class="column is-half is-offset-one-quarter">
+					<div class="field">
+						<label class="label">UserID</label>
+						<p class="control has-icons-left">
+							<input class="input" type="text" placeholder="" id="loginId" >
+							<span class="icon is-small is-left">
+								<i class="fas fa-user"></i>
+							</span>
+						</p>
+					</div>
+					<div class="field">
+						<label class="label">Email</label>
+						<p class="control has-icons-left">
+							<input class="input" type="email" placeholder="" id="mailAddress">
+							<span class="icon is-small is-left">
+								<i class="fas fa-envelope"></i>
+							</span>
+						</p>
+					</div>
+					<div class="field">
+						<label class="label">Confirm Email</label>
+						<p class="control has-icons-left">
+							<input class="input" type="email" placeholder="" id="mailAddressCheck">
+							<span class="icon is-small is-left">
+								<i class="fas fa-envelope"></i>
+							</span>
+						</p>
+					</div>
+					<div class="field">
+						<label class="label">Username</label>
+						<p class="control has-icons-left">
+							<input class="input" type="text" placeholder="" id="userName">
+							<span class="icon is-small is-left">
+								<i class="fas fa-user"></i>
+							</span>
+						</p>
+					</div>
+					<div class="field">
+						<label class="label">Password</label>
+						<p class="control has-icons-left">
+							<input class="input" type="password" placeholder="" id="password">
+							<span class="icon is-small is-left">
+								<i class="fas fa-lock"></i>
+							</span>
+						</p>
+					</div>
+					<div class="field">
+						<label class="label">Confirm Password</label>
+						<p class="control has-icons-left">
+							<input class="input" type="password" placeholder="" id="passwordCheck">
+							<span class="icon is-small is-left">
+								<i class="fas fa-lock"></i>
+							</span>
+						</p>
+					</div>
+					<div class="field">
+						<div class="buttons is-centered">
+							<input type="button" id="confirmButton" value="Confirm" class="button is-info"/>
+							<input type="button" id="saveButton" value="Regist" class="button is-primary"/>
+							<input type="button" id="resetButton" value="Reset" class="button is-light"/>
+							<input type="button" id="backButton" value="Back" class="button"/>
+						</div>
+					</div>
+				</div>
+<!-- 【for Bulma】標準のHTMLをカスタマイズ. end -->
 			</form>
 
 		</div>

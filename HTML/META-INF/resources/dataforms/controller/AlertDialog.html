@@ -5,10 +5,25 @@
 	<title></title>
 	</head>
 	<body>
+<!-- 【for Bulma】標準のHTMLをカスタマイズ. start -->
+<!--
 		<span id="alertMessage"></span><br/><br/>
 		<div class="buttonDiv">
 			<input type="button" id="alertOkButton" value="ＯＫ"/>
 		</div>
-		
+ -->
+		<div class="modal-background"></div>
+		<div class="modal-card">
+			<header class="modal-card-head">
+				<p class="modal-card-title">Modal title</p>
+			</header>
+			<section class="modal-card-body">
+				<span id="alertMessage"></span><br/><br/>
+			</section>
+			<footer class="modal-card-foot">
+				<input type="button" id="alertOkButton" value="OK" class="button is-info"/><!-- 閉じるだけなので色指定無し -->
+			</footer>
+		</div>
+<!-- 【for Bulma】標準のHTMLをカスタマイズ. end -->
 	</body>
 </html>

@@ -5,6 +5,8 @@
 		<title>インポート</title>
 	</head>
 	<body>
+<!-- 【for Bulma】標準のHTMLをカスタマイズ. start -->
+<!--
 		<form id="importDataForm">
 			<table>
 				<tbody>
@@ -24,6 +26,27 @@
 					</tr>
 				</tbody>
 			</table>
+ -->
+		<form id="importDataForm" class="modal is-active"><!-- Bulmaの都合上ここにmodal,is-activeを指定しておく(モバイル端末での幅Fit不具合のため) -->
+			<div class="modal-background"></div>
+			<div class="modal-card">
+				<header class="modal-card-head">
+					<p class="modal-card-title">Modal title</p>
+				</header>
+				<section class="modal-card-body">
+					<div class="field">
+						<label class="label">パス名</label>
+						<p class="control">
+							<input class="input is-static" type="text" placeholder="" id="pathName" readonly>
+						</p>
+					</div>
+				</section>
+				<footer class="modal-card-foot">
+					<input type="button" id="importButton" value="インポート" class="button is-primary"/>
+					<input type="button" id="closeButton" value="閉じる" class="button"/>
+				</footer>
+			</div>
+<!-- 【for Bulma】標準のHTMLをカスタマイズ. end -->
 		</form>
 	</body>
 </html>
