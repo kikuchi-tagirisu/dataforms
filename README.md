@@ -1,5 +1,3 @@
-CSSフレームワークのBulmaを使ってdataforms.jarのUIをカスタマイズしてみました。
+CSSフレームワークのBulmaを使ってdataforms.jarのUIをカスタマイズしてみました。<br/>
 dataforms.jarはJSPが無いため、CSSフレームワークを使う場合も便利でした。
 
-オリジナルは下記
-takayanagi2087/dataforms
