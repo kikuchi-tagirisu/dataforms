@@ -31,6 +31,7 @@ Dialog.prototype.init = function() {
 // closeボタンや背景クリックで閉じる必要がある場合は、継承先クラスで実装する
 //		Exp.
 //			$("#close, div.modal-background").on("click", function() {
+//				document.documentElement.classList.remove('is-clipped');
 //				dlgdiv.removeClass("is-active");
 //			})
 // 【for Bulma】BulmaのModalを使用 end
@@ -78,12 +79,11 @@ Dialog.prototype.show = function(modal, p) {
 //	}
 //	dlgdiv.dialog(m);
 	dlgdiv.find(".modal-card-title").text(this.title);
-	// Enterキー押下時の動作を無効化.
-	$('body').keypress((e)=>{
-		if(e.which == 13){
-			return false;
-		}
+	dlgdiv.focus();				// ダイアログにフォーカスを当てる.
+	$(document).keydown((e)=>{	// submit防止のため全てのキー操作を無効化.(フォーカスが外れるキーやエンターキーなど含む)
+		return false;
 	});
+	document.documentElement.classList.add('is-clipped');
 	dlgdiv.addClass('is-active');
 // 【for Bulma】BulmaのModalを使用 end
 };
@@ -115,8 +115,9 @@ Dialog.prototype.close = function() {
 	var dlgdiv = $('body').find('#' + this.selectorEscape(this.id));
 // 【for Bulma】BulmaのModalを使用 start
 //	dlgdiv.dialog('close');
-	// Enterキー無効化の削除.
-	$('body').off("keypress");
+	// 操作無効化の解除.
+	$(document).off("keydown");
+	document.documentElement.classList.remove('is-clipped');
 	dlgdiv.removeClass('is-active');
 // 【for Bulma】BulmaのModalを使用 end
 };
