@@ -5,6 +5,6 @@ Built-By: Kikuchi Ryota
 Implementation-Vendor: Kikuchi Ryota
 Implementation-Title: Dataforms java web application framework. Applie
  d Bulma CSS framework
-Implementation-Version: 1.32-b594
-CreatedTime: 2020/02/23 10:47:11.186
+Implementation-Version: 1.32-b597
+CreatedTime: 2020/02/23 13:25:43.070
 

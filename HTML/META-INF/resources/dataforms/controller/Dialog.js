@@ -79,12 +79,12 @@ Dialog.prototype.show = function(modal, p) {
 //	}
 //	dlgdiv.dialog(m);
 	dlgdiv.find(".modal-card-title").text(this.title);
-	dlgdiv.focus();				// ダイアログにフォーカスを当てる.
-	$(document).keydown((e)=>{	// submit防止のため全てのキー操作を無効化.(フォーカスが外れるキーやエンターキーなど含む)
+	$(window).keydown((e)=>{	// submit防止のため全てのキー操作を無効化.(フォーカスが外れるキーやエンターキーなど含む)
 		return false;
 	});
 	document.documentElement.classList.add('is-clipped');
 	dlgdiv.addClass('is-active');
+	document.activeElement.blur();	// フォーカスを外す.(再度Submitさせないため)
 // 【for Bulma】BulmaのModalを使用 end
 };
 
@@ -116,7 +116,7 @@ Dialog.prototype.close = function() {
 // 【for Bulma】BulmaのModalを使用 start
 //	dlgdiv.dialog('close');
 	// 操作無効化の解除.
-	$(document).off("keydown");
+	$(window).off("keydown");
 	document.documentElement.classList.remove('is-clipped');
 	dlgdiv.removeClass('is-active');
 // 【for Bulma】BulmaのModalを使用 end
